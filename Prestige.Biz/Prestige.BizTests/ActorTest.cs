@@ -43,5 +43,18 @@ namespace Prestige.BizTests
 
       Assert.AreEqual(expected,result);
     }
-  }
+
+    [TestMethod]
+    public void TestBookActorOnSpecificDate()
+    {
+      string details = "Bookings can Change if " +
+                       "actor starts trouble";
+      var currentActor = new Actor("Jonny Boi");
+      var expected = $"Actor Jonny Boi is booked on {DateTime.Today.ToShortDateString()}. {details}";
+
+      string result = currentActor.BooKActor(DateTime.Today.ToShortDateString());
+
+      Assert.AreEqual(expected, result);
+    }
+    }
 }
