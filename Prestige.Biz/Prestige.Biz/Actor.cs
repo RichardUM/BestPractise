@@ -22,7 +22,7 @@ namespace Prestige.Biz
 
     public string ActorName
     {
-      get { return actorName;}
+      get { return actorName; }
       set { actorName = value; }
     }
     private string jobTitle;

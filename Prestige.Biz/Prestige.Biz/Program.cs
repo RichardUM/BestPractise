@@ -6,10 +6,20 @@ using System.Threading.Tasks;
 
 namespace Prestige.Biz
 {
-    class Program
+  class Program
+  {
+    public const int ConstantNumber = 100;
+    public static readonly int ReadOnlyNumber = 0;
+
+    static Program()
     {
-        static void Main(string[] args)
-        {
-        }
+      ReadOnlyNumber = 009;
     }
+
+    static void Main(string[] args)
+    {
+      Console.WriteLine(ConstantNumber);
+      Console.WriteLine(ReadOnlyNumber);
+    }
+  }
 }
