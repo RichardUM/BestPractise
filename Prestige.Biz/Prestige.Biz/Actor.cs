@@ -24,8 +24,18 @@ namespace Prestige.Biz
     {
       get => _actorName;
       set => _actorName = value?.Trim();
-
     }
+
+    private int _actorAge;
+
+    public int ActorAge
+    {
+      get { return _actorAge; }
+      set { _actorAge = value; }
+    }
+
+    public string ActorDescription { get; set; } = 
+      "Regular actor";
 
     public string JobTitle { get; set; }
     /// <summary>

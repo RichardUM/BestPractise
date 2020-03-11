@@ -70,6 +70,18 @@ namespace Prestige.BizTests
       Assert.AreEqual(expected, result);
     }
 
+    [TestMethod]
+    public void TestAutoPropActorDescription()
+    {
+      var currentActor = new Actor(){ActorName = "Sandy Love"};
+      var expected = "Regular actor";
+
+      var results = currentActor.ActorDescription;
+
+      Assert.AreEqual(expected,results);
+
+    }
+
   }
 
 }
