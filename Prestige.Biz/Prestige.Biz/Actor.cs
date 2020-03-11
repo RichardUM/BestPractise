@@ -49,9 +49,7 @@ namespace Prestige.Biz
     /// <returns></returns>
     public string BooKActor()
     {
-      string details = "Bookings can Change if " +
-                       "actor starts trouble";
-      return "Actor " + ActorName + " is booked. " + details;
+      return BooKActor(String.Empty);
     }
 
     /// <summary>
@@ -63,9 +61,13 @@ namespace Prestige.Biz
     {
       string details = "Bookings can Change if " +
                        "actor starts trouble";
+      if (date == String.Empty)
+      {
+        return $"Actor {ActorName} is booked. {details}";
+      }
       return $"Actor {ActorName} is booked on {date}. {details}";
     }
 
 
-    }
+  }
 }
