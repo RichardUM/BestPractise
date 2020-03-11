@@ -7,10 +7,39 @@ using System.Threading.Tasks;
 namespace Prestige.Biz
 {
   public class Actor
+  {
+    public Actor()
     {
-      public string GetOccupation()
-      {
-        return "Actor";
-      }
+      Console.WriteLine("Something new");
     }
+
+    public Actor(string actorName)
+    {
+      ActorName = actorName;
+    }
+
+    private string actorName;
+
+    public string ActorName
+    {
+      get { return actorName;}
+      set { actorName = value; }
+    }
+    private string jobTitle;
+
+    public string JobTitle
+    {
+      get { return jobTitle; }
+      set { jobTitle = value; }
+    }
+    /// <summary>
+    /// Will return title
+    /// </summary>
+    /// <returns></returns>
+    public string GetOccupation()
+    {
+      jobTitle = "Actor";
+      return jobTitle;
+    }
+  }
 }
