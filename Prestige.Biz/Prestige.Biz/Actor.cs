@@ -18,28 +18,62 @@ namespace Prestige.Biz
       ActorName = actorName;
     }
 
-    private string actorName;
+    private string _actorName;
 
     public string ActorName
     {
-      get { return actorName;}
-      set { actorName = value; }
+      get => _actorName;
+      set => _actorName = value?.Trim();
     }
-    private string jobTitle;
 
-    public string JobTitle
+    private int _actorAge;
+
+    public int ActorAge
     {
-      get { return jobTitle; }
-      set { jobTitle = value; }
+      get { return _actorAge; }
+      set { _actorAge = value; }
     }
+
+    public string ActorDescription { get; set; } = 
+      "Regular actor";
+
+    public string JobTitle { get; set; }
     /// <summary>
     /// Will return title
     /// </summary>
     /// <returns></returns>
     public string GetOccupation()
     {
-      jobTitle = "Actor";
-      return jobTitle;
+      JobTitle = "Actor";
+      return JobTitle;
     }
+
+
+    /// <summary>
+    /// Books actor and not specified date.
+    /// </summary>
+    /// <returns></returns>
+    public string BooKActor()
+    {
+      return BooKActor(String.Empty);
+    }
+
+    /// <summary>
+    /// Books actor on specific dates
+    /// </summary>
+    /// <param name="date"></param>
+    /// <returns></returns>
+    public string BooKActor(string date)
+    {
+      string details = "Bookings can Change if " +
+                       "actor starts trouble";
+      if (date == String.Empty)
+      {
+        return $"Actor {ActorName} is booked. {details}";
+      }
+      return $"Actor {ActorName} is booked on {date}. {details}";
+    }
+
+
   }
 }
