@@ -41,5 +41,31 @@ namespace Prestige.Biz
       jobTitle = "Actor";
       return jobTitle;
     }
-  }
+
+
+    /// <summary>
+    /// Books actor and not specified date.
+    /// </summary>
+    /// <returns></returns>
+    public string BooKActor()
+    {
+      string details = "Booking can Change if " +
+                       "actor starts trouble";
+      return "Actor" + ActorName + " Is booked." + details;
+    }
+
+    /// <summary>
+    /// Books actor on specific dates
+    /// </summary>
+    /// <param name="date"></param>
+    /// <returns></returns>
+    public string BooKActor(string date)
+    {
+      string details = "Booking can Change if " +
+                       "actor starts trouble";
+      return $"Actor {ActorName} is booked on {date}. {details}";
+    }
+
+
+    }
 }
