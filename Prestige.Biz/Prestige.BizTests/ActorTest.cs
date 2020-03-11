@@ -28,7 +28,7 @@ namespace Prestige.BizTests
 
       string result = currentActor.ActorName;
 
-      Assert.AreEqual(expected,result);
+      Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
@@ -36,12 +36,12 @@ namespace Prestige.BizTests
     {
       string details = "Bookings can Change if " +
                        "actor starts trouble";
-      var currentActor =  new Actor("Jonny Boi");
+      var currentActor = new Actor("Jonny Boi");
       var expected = $"Actor Jonny Boi is booked. {details}";
 
       string result = currentActor.BooKActor();
 
-      Assert.AreEqual(expected,result);
+      Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
@@ -56,5 +56,20 @@ namespace Prestige.BizTests
 
       Assert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    public void TestFormattingOnSetterForBookActor()
+    {
+      string details = "Bookings can Change if " +
+                       "actor starts trouble";
+      var currentActor = new Actor("Jonny Boi     ");
+      var expected = $"Actor Jonny Boi is booked. {details}";
+
+      string result = currentActor.BooKActor();
+
+      Assert.AreEqual(expected, result);
     }
+
+  }
+
 }
