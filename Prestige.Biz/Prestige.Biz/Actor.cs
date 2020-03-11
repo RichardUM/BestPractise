@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Prestige.Biz
 {
-    class Actor
+  public class Actor
     {
       public string GetOccupation()
       {
