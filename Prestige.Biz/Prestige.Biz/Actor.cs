@@ -18,28 +18,17 @@ namespace Prestige.Biz
       ActorName = actorName;
     }
 
-    private string actorName;
+    public string ActorName { get; set; }
 
-    public string ActorName
-    {
-      get { return actorName; }
-      set { actorName = value; }
-    }
-    private string jobTitle;
-
-    public string JobTitle
-    {
-      get { return jobTitle; }
-      set { jobTitle = value; }
-    }
+    public string JobTitle { get; set; }
     /// <summary>
     /// Will return title
     /// </summary>
     /// <returns></returns>
     public string GetOccupation()
     {
-      jobTitle = "Actor";
-      return jobTitle;
+      JobTitle = "Actor";
+      return JobTitle;
     }
 
 
