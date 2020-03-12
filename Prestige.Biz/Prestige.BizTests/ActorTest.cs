@@ -12,11 +12,12 @@ namespace Prestige.BizTests
     [TestMethod]
     public void TestGetOccupation()
     {
+      //Arrange
       var currentActor = new Actor();
       var expected = "Actor";
-
+      //Act
       string result = currentActor.GetOccupation();
-
+      //Assert
       Assert.AreEqual(expected, result);
     }
 
@@ -93,6 +94,16 @@ namespace Prestige.BizTests
 
     }
 
+    [TestMethod]
+    public void TestGetAgency()
+    {
+      var currentActor = new Actor();
+      var expected = "Prestige Talent";
+
+      var result = currentActor.GetAgency();
+
+      Assert.AreEqual(expected, result);
+    }
   }
 
 }
