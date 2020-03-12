@@ -21,9 +21,20 @@ namespace Prestige.BizTests
     }
 
     [TestMethod]
-    public void TestParameterizedConstactor()
+    public void TestParameterizedConstractor()
     {
       var currentActor = new Actor("Jonny");
+      var expected = "Jonny";
+
+      string result = currentActor.ActorName;
+
+      Assert.AreEqual(expected, result);
+    }
+    [TestMethod]
+    public void TestSettingObjectProperty()
+    {
+      var currentActor = new Actor();
+      currentActor.ActorName = "Jonny";
       var expected = "Jonny";
 
       string result = currentActor.ActorName;
