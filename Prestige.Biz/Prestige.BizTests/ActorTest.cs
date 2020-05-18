@@ -12,18 +12,30 @@ namespace Prestige.BizTests
     [TestMethod]
     public void TestGetOccupation()
     {
+      //Arrange
       var currentActor = new Actor();
       var expected = "Actor";
-
+      //Act
       string result = currentActor.GetOccupation();
-
+      //Assert
       Assert.AreEqual(expected, result);
     }
 
     [TestMethod]
-    public void TestParameterizedConstactor()
+    public void TestParameterizedConstractor()
     {
       var currentActor = new Actor("Jonny");
+      var expected = "Jonny";
+
+      string result = currentActor.ActorName;
+
+      Assert.AreEqual(expected, result);
+    }
+    [TestMethod]
+    public void TestSettingObjectProperty()
+    {
+      var currentActor = new Actor();
+      currentActor.ActorName = "Jonny";
       var expected = "Jonny";
 
       string result = currentActor.ActorName;
@@ -82,6 +94,16 @@ namespace Prestige.BizTests
 
     }
 
+    [TestMethod]
+    public void TestGetAgency()
+    {
+      var currentActor = new Actor();
+      var expected = "Prestige Talent";
+
+      var result = currentActor.GetAgency();
+
+      Assert.AreEqual(expected, result);
+    }
   }
 
 }
