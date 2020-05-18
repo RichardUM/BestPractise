@@ -11,7 +11,7 @@ namespace Prestige.Biz
     public Actor()
     {
       Console.WriteLine("Something new");
-      this.CurrentAgency = new Agency();
+      //this.CurrentAgency = new Agency();
     }
 
     public Actor(string actorName)
@@ -27,15 +27,12 @@ namespace Prestige.Biz
       set => _actorName = value?.Trim();
     }
 
-    private int _actorAge;
+    public int ActorAge { get; set; }
 
-    public int ActorAge
+    public Agency CurrentAgency
     {
-      get { return _actorAge; }
-      set { _actorAge = value; }
+      get; set;
     }
-
-    public Agency CurrentAgency { get; set; }
 
     public string ActorDescription { get; set; } = 
       "Regular actor";
